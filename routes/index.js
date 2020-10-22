@@ -1,10 +1,10 @@
 const express = require('express');
-const pool = require('../models/db');
+const {pool} = require('../models/db');
 const router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  const sql = 'SELECT * FROM users';
+  const sql = 'SELECT * FROM story';
 
   pool.query(sql, function (err, result, fields) {
     if (err) throw err;
@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-  res.render('users', { title: 'Express' });
+  res.render('story', { title: 'Express' });
 });
 
 module.exports = router;

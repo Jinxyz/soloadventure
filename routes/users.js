@@ -4,7 +4,7 @@ const { pool, query } = require('../models/db');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  const sql = 'SELECT * FROM users'
+  const sql = 'SELECT * FROM story'
 
   pool.query(sql, function (err, result, fields) {
     if (err) throw err;
@@ -18,7 +18,12 @@ router.get('/', function(req, res, next) {
 router.get('/:id', async function (req, res, next) {
   try {
     const user = await query(
-      'SELECT * FROM users WHERE id = ?',
+      'SELECT * FROM story WHERE id = ?',
+      req.params.id
+    );
+    
+    const user = await query(
+      'SELECT * FROM story WHERE story_id = ?',
       req.params.id
     );
 
@@ -32,5 +37,4 @@ router.get('/:id', async function (req, res, next) {
     next(e);
   }
 });
-
 module.exports = router;

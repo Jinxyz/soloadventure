@@ -19,10 +19,10 @@
 -- Table structure for table `blog`
 --
 
-DROP TABLE IF EXISTS `blog`;
+DROP TABLE IF EXISTS `Story`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `blog` (
+CREATE TABLE `Story` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `body` text,
   `title` varchar(128) DEFAULT NULL,
@@ -37,9 +37,9 @@ CREATE TABLE `blog` (
 -- Dumping data for table `blog`
 --
 
-LOCK TABLES `blog` WRITE;
+LOCK TABLES `Story` WRITE;
 /*!40000 ALTER TABLE `blog` DISABLE KEYS */;
-INSERT INTO `blog` VALUES (1,'Tjena','Hejsan',NULL,'2020-09-25 08:57:41',1);
+INSERT INTO `Story` VALUES (1,'Tjena','Hejsan',NULL,'2020-09-25 08:57:41',1);
 /*!40000 ALTER TABLE `blog` ENABLE KEYS */;
 UNLOCK TABLES;
 
