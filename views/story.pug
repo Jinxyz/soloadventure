@@ -2,4 +2,7 @@ extends layout
 
 block content
   body
-    p= sql[0].body
+    p= story[0].body
+
+    each link in links
+      a(href=link.target_id)=link.description
