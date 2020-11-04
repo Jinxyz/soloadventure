@@ -2,7 +2,9 @@ extends layout
 
 block content
   body
-    p= story[0].body
+    .container
+      h5.m-2.mt-4.mb-4= story[0].body
 
-    each link in links
-      a(href=link.target_id)=link.description
+      each link in links
+        a(href=link.target_id)
+          button.btn-block.btn.btn-secondary.m-3.btn-lg(type='button')=link.description
